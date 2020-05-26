@@ -18,11 +18,12 @@ SERVER_APP = PARENT_DIR + '/odoo-server/odoo-bin'
 version = ''
 mode = ''
 update = False
+shell = False
 addons_list = ''
 modul_name = ''
 log_level = 'info'
 arguments = ['-i', '-u', '-debug', '-warn', '-error', '-critical']
-error_syntax = 'Invalid Syntax: odoo_start.py [-i/-u] "modul_name"\nLog level is optional [-debug/-warn/-error/-crtical]\n'
+error_syntax = 'Invalid Syntax: odoo_start.py [-i/-u/-uall] "modul_name"\nLog level is optional [-debug/-warn/-error/-crtical]\n'
 
 
 def error(msg):
@@ -52,6 +53,8 @@ def start():
     global version
     if update:
         command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} -u all --stop-after-init"
+    elif shell:
+        command = f"{SERVER_APP} shell --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul} --log-level {log_level} --limit-time-real=0"
     else:
         command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul} --log-level {log_level} --limit-time-real=0"
     imprimir(SERVER_APP, log_level, modul, command)
@@ -70,6 +73,9 @@ def imprimir(server_app, log_level, modul, command):
     global version
     print(
         f'{etiqueta}[ODOO VERSION]{reset}{fletxa} --> {reset}{valor2}{version}{reset}')
+    global shell
+    if shell:
+        print(f'{etiqueta}[SHELL INTERACTIVE]{reset}')
     print(
         f'{etiqueta}[LOCAL COMMAND]{reset}{fletxa} --> {reset}{valor2}{command}{reset}')
     server_command = command.replace(PARENT_DIR, "/odoo")
@@ -119,6 +125,7 @@ def getArgument(arg):
     global mode
     global log_level
     global update
+    global shell
     if arg == '-i':
         mode = '-i'
     elif arg == '-u':
@@ -133,6 +140,8 @@ def getArgument(arg):
         log_level = 'critical'
     elif arg == '-uall':
         update = True
+    elif arg == '-shell':
+        shell = True
     else:
         error(f'Argument {arg} no exist!')
 
@@ -179,10 +188,18 @@ def addons_list(addon):
     if addon in getModulList():
         addons_list = getAddonsFromDict(addon)
     elif addon not in arguments:
-        error('Addon names isn\'t in addons list')
+        error(
+            f'Addon names isn\'t in addons list\n\nList of modules:\n{listOfDevelop()}')
 
     global ADDONS_PATH
     return addons_list + ADDONS_PATH
+
+
+def listOfDevelop():
+    res = ''
+    for key, values in getModulList().items():
+        res += f"--[{values['odoo']}]--> {key}\n"
+    return res
 
 
 def getAddonsFromDict(addon):
