@@ -67,5 +67,21 @@
       "OCA/queue"
     ]
   },
-  "calcul_dietes": { "odoo": 13.0, "moduls": ["web"] }
+  "calcul_dietes": {
+    "odoo": 13.0,
+    "moduls": ["web"]
+  },
+  "eco_industria": {
+    "odoo": 13.0,
+    "moduls": [
+      "OCA/partner-contact",
+      "OCA/web",
+      "OCA/social",
+      "OCA/server-backend",
+      "OCA/server-ux",
+      "OCA/l10n-spain",
+      "OCA/bank-payment",
+      "OCA/community-data-files"
+    ]
+  }
 }
