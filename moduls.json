@@ -71,7 +71,7 @@
     "odoo": 13.0,
     "moduls": ["web"]
   },
-  "eco_industria": {
+  "ecoindustria": {
     "odoo": 13.0,
     "moduls": [
       "OCA/partner-contact",
