@@ -81,7 +81,8 @@
       "OCA/server-ux",
       "OCA/l10n-spain",
       "OCA/bank-payment",
-      "OCA/community-data-files"
+      "OCA/community-data-files",
+      "OCA/project"
     ]
   }
 }
