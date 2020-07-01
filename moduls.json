@@ -69,7 +69,9 @@
   },
   "calcul_dietes": {
     "odoo": 13.0,
-    "moduls": ["web"]
+    "moduls": [
+      "web"
+    ]
   },
   "ecoindustria": {
     "odoo": 13.0,
@@ -83,6 +85,48 @@
       "OCA/bank-payment",
       "OCA/community-data-files",
       "OCA/project"
+    ]
+  },
+  "otp": {
+    "odoo": 12.0,
+    "moduls": [
+      "OCA/l10n-spain",
+      "OCA/account-financial-reporting",
+      "OCA/bank-payment",
+      "OCA/community-data-files",
+      "OCA/partner-contact",
+      "OCA/server-tools",
+      "OCA/server-ux",
+      "OCA/web",
+      "OCA/mis-builder",
+      "OCA/reporting-engine",
+      "OCA/project",
+      "OCA/account-financial-tools",
+      "OCA/account-invoicing",
+      "OCA/account-payment",
+      "OCA/product-attribute",
+      "OCA/social"
+    ]
+  },
+  "staar": {
+    "odoo": 12.0,
+    "moduls": [
+      "OCA/partner-contact",
+      "OCA/l10n-spain",
+      "OCA/community-data-files",
+      "OCA/web",
+      "OCA/server-tools",
+      "OCA/bank-payment",
+      "OCA/social",
+      "OCA/account-invoicing",
+      "OCA/account-financial-reporting",
+      "OCA/account-payment",
+      "OCA/reporting-engine",
+      "OCA/mis-builder",
+      "OCA/sale-workflow",
+      "OCA/product-attribute",
+      "OCA/account-analytic",
+      "OCA/account-financial-tools"
     ]
   }
 }
