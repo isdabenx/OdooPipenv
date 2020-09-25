@@ -70,7 +70,8 @@
   "calcul_dietes": {
     "odoo": 13.0,
     "moduls": [
-      "web"
+      "web",
+      "OCA/partner-contact"
     ]
   },
   "ecoindustria": {
@@ -127,6 +128,26 @@
       "OCA/product-attribute",
       "OCA/account-analytic",
       "OCA/account-financial-tools"
+    ]
+  }, "miatec": {
+    "odoo": 12.0,
+    "moduls": [
+      "OCA/account-analytic",
+      "OCA/account-invoicing",
+      "OCA/account-financial-reporting",
+      "OCA/account-financial-tools",
+      "OCA/bank-payment",
+      "OCA/community-data-files",
+      "OCA/l10n-spain",
+      "OCA/mis-builder",
+      "OCA/partner-contact",
+      "OCA/purchase-workflow",
+      "OCA/reporting-engine",
+      "OCA/server-tools",
+      "OCA/server-ux",
+      "OCA/social",
+      "OCA/web",
+      "tecnihand"
     ]
   }
 }
