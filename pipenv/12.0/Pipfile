@@ -52,6 +52,7 @@ unidecode = "*"
 zeep = "*"
 pycountry = "*"
 xmlsig = "*"
+openupgradelib = "*"
 
 [requires]
 python_version = "3.7"
