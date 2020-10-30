@@ -21,6 +21,7 @@ update = False
 shell = False
 addons_list = ''
 modul_name = ''
+modul_dir = ''
 log_level = 'info'
 arguments = ['-i', '-u', '-debug', '-warn', '-error', '-critical']
 error_syntax = 'Invalid Syntax: odoo_start.py [-i/-u/-uall] "modul_name"\nLog level is optional [-debug/-warn/-error/-crtical]\n'
@@ -52,11 +53,11 @@ def start():
     global update
     global version
     if update:
-        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} -u all --stop-after-init"
+        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul_dir} -u all --stop-after-init"
     elif shell:
-        command = f"{SERVER_APP} shell --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul} --log-level {log_level} --limit-time-real=0"
+        command = f"{SERVER_APP} shell --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
     else:
-        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul} --log-level {log_level} --limit-time-real=0"
+        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
     imprimir(SERVER_APP, log_level, modul, command)
     pause()
     change_version()
@@ -168,6 +169,7 @@ def getModulList(addon=""):
         result = file.read()
         result = json.loads(result.replace("'", '"'))
         file.close()
+
     except:
         print('ERROR to open file "moduls.json"')
         exit()
@@ -176,6 +178,8 @@ def getModulList(addon=""):
         return result
     else:
         global version
+        global modul_dir
+        modul_dir = result[addon]['directory']
         if len(str(version)) == 0:
             version = result[addon]['odoo']
         return result[addon]['moduls']
@@ -204,7 +208,8 @@ def listOfDevelop():
 
 def getAddonsFromDict(addon):
     addons_list = ''
-    if check_path(addon + '/' + addon):
+    global modul_dir
+    if check_path(addon + '/' + modul_dir):
         addons_list += path_resolv(addon) + ','
     else:
         error(f"ERROR: directorio del addon no encontrado: {addon}")
