@@ -1,6 +1,7 @@
 {
   "coacb": {
     "odoo": 12.0,
+    "directory": "coacb",
     "moduls": [
       "OCA/community-data-files",
       "OCA/l10n-spain",
@@ -21,31 +22,34 @@
   },
   "bombonscudie": {
     "odoo": 12.0,
+    "directory": "bombonscudie",
     "moduls": [
-      "OCA/l10n-spain",
-      "OCA/bank-payment",
-      "OCA/web",
-      "OCA/community-data-files",
-      "OCA/partner-contact",
-      "OCA/pos",
       "OCA/account-analytic",
       "OCA/account-financial-reporting",
       "OCA/account-financial-tools",
+      "OCA/account-reconcile",
+      "OCA/bank-payment",
+      "OCA/community-data-files",
+      "OCA/credit-control",
+      "OCA/delivery-carrier",
+      "OCA/l10n-spain",
       "OCA/mis-builder",
+      "OCA/partner-contact",
+      "OCA/pos",
+      "OCA/product-attribute",
       "OCA/reporting-engine",
       "OCA/server-tools",
       "OCA/server-ux",
       "OCA/social",
-      "OCA/stock-logistics-workflow",
       "OCA/stock-logistics-warehouse",
-      "OCA/product-attribute",
-      "OCA/delivery-carrier",
-      "OCA/credit-control",
+      "OCA/stock-logistics-workflow",
+      "OCA/web",
       "tecnihand"
     ]
   },
   "floraqueen": {
     "odoo": 12.0,
+    "directory": "floraqueen",
     "moduls": [
       "OCA/account-analytic",
       "OCA/account-financial-reporting",
@@ -69,6 +73,7 @@
   },
   "calcul_dietes": {
     "odoo": 13.0,
+    "directory": "calcul_dietes",
     "moduls": [
       "web",
       "OCA/partner-contact"
@@ -76,6 +81,7 @@
   },
   "ecoindustria": {
     "odoo": 13.0,
+    "directory": "ecoindustria",
     "moduls": [
       "OCA/partner-contact",
       "OCA/web",
@@ -90,6 +96,7 @@
   },
   "otp": {
     "odoo": 12.0,
+    "directory": "otp",
     "moduls": [
       "OCA/l10n-spain",
       "OCA/account-financial-reporting",
@@ -111,6 +118,7 @@
   },
   "staar": {
     "odoo": 12.0,
+    "directory": "custom_tecnihand",
     "moduls": [
       "OCA/partner-contact",
       "OCA/l10n-spain",
@@ -132,6 +140,7 @@
   },
   "miatec": {
     "odoo": 12.0,
+    "directory": "miatec",
     "moduls": [
       "OCA/account-analytic",
       "OCA/account-invoicing",
@@ -153,11 +162,13 @@
   },
   "14": {
     "odoo": 14.0,
+    "directory": "14",
     "moduls": [
     ]
   },
   "eitag": {
     "odoo": 13.0,
+    "directory": "eitag",
     "moduls": [
       "OCA/account-financial-reporting",
       "OCA/account-financial-tools",
@@ -165,6 +176,22 @@
       "OCA/l10n-spain",
       "OCA/reporting-engine",
       "OCA/partner-contact",
+      "OCA/server-backend",
+      "OCA/server-tools",
+      "OCA/server-ux",
+      "OCA/social",
+      "OCA/web"
+    ]
+  },
+  "goodnews": {
+    "odoo": 13.0,
+    "directory": "goodnews",
+    "moduls": [
+      "OCA/account-financial-reporting",
+      "OCA/account-financial-tools",
+      "OCA/community-data-files",
+      "OCA/l10n-spain",
+      "OCA/reporting-engine",
       "OCA/server-backend",
       "OCA/server-tools",
       "OCA/server-ux",
