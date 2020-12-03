@@ -2,6 +2,7 @@
   "coacb": {
     "odoo": 12.0,
     "directory": "coacb",
+    "database": "coacb",
     "moduls": [
       "OCA/community-data-files",
       "OCA/l10n-spain",
@@ -23,6 +24,7 @@
   "bombonscudie": {
     "odoo": 12.0,
     "directory": "bombonscudie",
+    "database": "bombonscudie",
     "moduls": [
       "OCA/account-analytic",
       "OCA/account-financial-reporting",
@@ -50,6 +52,7 @@
   "floraqueen": {
     "odoo": 12.0,
     "directory": "floraqueen",
+    "database": "floraqueen",
     "moduls": [
       "OCA/account-analytic",
       "OCA/account-financial-reporting",
@@ -74,6 +77,7 @@
   "calcul_dietes": {
     "odoo": 13.0,
     "directory": "calcul_dietes",
+    "database": "calcul_dietes",
     "moduls": [
       "web",
       "OCA/partner-contact"
@@ -82,6 +86,7 @@
   "ecoindustria": {
     "odoo": 13.0,
     "directory": "ecoindustria",
+    "database": "ecoindustria",
     "moduls": [
       "OCA/partner-contact",
       "OCA/web",
@@ -97,6 +102,7 @@
   "otp": {
     "odoo": 12.0,
     "directory": "otp",
+    "database": "otp",
     "moduls": [
       "OCA/l10n-spain",
       "OCA/account-financial-reporting",
@@ -119,6 +125,7 @@
   "staar": {
     "odoo": 12.0,
     "directory": "custom_tecnihand",
+    "database": "custom_tecnihand",
     "moduls": [
       "OCA/partner-contact",
       "OCA/l10n-spain",
@@ -141,6 +148,7 @@
   "miatec": {
     "odoo": 12.0,
     "directory": "miatec",
+    "database": "miatec",
     "moduls": [
       "OCA/account-analytic",
       "OCA/account-invoicing",
@@ -160,20 +168,32 @@
       "tecnihand"
     ]
   },
+  "12": {
+    "odoo": 12.0,
+    "directory": "12",
+    "database": "12",
+    "moduls": [
+    ]
+  },
   "14": {
     "odoo": 14.0,
     "directory": "14",
+    "database": "14",
     "moduls": [
     ]
   },
   "eitag": {
     "odoo": 13.0,
     "directory": "eitag",
+    "database": "eitag2",
     "moduls": [
       "OCA/account-financial-reporting",
       "OCA/account-financial-tools",
+      "OCA/account-payment",
+      "OCA/bank-payment",
       "OCA/community-data-files",
       "OCA/l10n-spain",
+      "OCA/mis-builder",
       "OCA/reporting-engine",
       "OCA/partner-contact",
       "OCA/server-backend",
@@ -186,6 +206,7 @@
   "goodnews": {
     "odoo": 13.0,
     "directory": "goodnews",
+    "database": "goodnews",
     "moduls": [
       "OCA/account-financial-reporting",
       "OCA/account-financial-tools",

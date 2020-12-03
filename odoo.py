@@ -16,6 +16,7 @@ ADDONS_PATH = PARENT_DIR + '/enterprise/addons,' + \
     PARENT_DIR + '/odoo-server/addons'
 SERVER_APP = PARENT_DIR + '/odoo-server/odoo-bin'
 version = ''
+database = ''
 mode = ''
 update = False
 shell = False
@@ -52,12 +53,13 @@ def start():
     global log_level
     global update
     global version
+    global database
     if update:
-        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul_dir} -u all --stop-after-init"
+        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {database} -u all --stop-after-init"
     elif shell:
-        command = f"{SERVER_APP} shell --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
+        command = f"{SERVER_APP} shell --addons-path {addons_list(modul)} -d {database} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
     else:
-        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {modul} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
+        command = f"{SERVER_APP} --addons-path {addons_list(modul)} -d {database} {checkMode()} {modul_dir} --log-level {log_level} --limit-time-real=0"
     imprimir(SERVER_APP, log_level, modul, command)
     pause()
     change_version()
@@ -74,6 +76,9 @@ def imprimir(server_app, log_level, modul, command):
     global version
     print(
         f'{etiqueta}[ODOO VERSION]{reset}{fletxa} --> {reset}{valor2}{version}{reset}')
+    global database
+    print(
+        f'{etiqueta}[DATABASE]{reset}{fletxa} --> {reset}{valor2}{database}{reset}')
     global shell
     if shell:
         print(f'{etiqueta}[SHELL INTERACTIVE]{reset}')
@@ -179,9 +184,10 @@ def getModulList(addon=""):
     else:
         global version
         global modul_dir
+        global database
         modul_dir = result[addon]['directory']
-        if len(str(version)) == 0:
-            version = result[addon]['odoo']
+        version = result[addon]['odoo']
+        database = result[addon]['database']
         return result[addon]['moduls']
 
 
